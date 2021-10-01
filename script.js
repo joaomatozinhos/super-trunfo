@@ -140,3 +140,30 @@ var cartas = [
   carta9,
   carta10
 ]
+
+var cartaMaquina
+var cartaJogador
+
+function sortearCarta() {
+  var numeroCartaJogador = parseInt(Math.random() * cartas.length)
+
+  // o parseInt é para deixar o número inteiro, já que Math.random() sorteia números decimais
+
+  // por que "Math.random() * cartas.length"?
+  // porque o Math.random() sorteia apenas números entre 0 e 1
+  // ao multiplicar pelo tamanho do array, possibilita sortear todos as posições do array, não apenas 0 e 1
+
+  cartaJogador = cartas[numeroCartaJogador]
+
+  // com o comando abaixo, remove-se o carta sorteada para o Jogador
+  cartas.splice(numeroCartaJogador, 1)
+  // dessa forma, ao sortear a carta da Máquina, não terá a carta do Jogador como opção
+
+  var numeroCartaMaquina = parseInt(Math.random() * cartas.length)
+  cartaMaquina = cartas[numeroCartaMaquina]
+
+  console.log(cartaJogador)
+  console.log(cartaMaquina)
+}
+
+sortearCarta(cartas)

@@ -1,13 +1,13 @@
 var carta1 = {
-  nome: 'Lionel Messi',
+  nome: 'Messi',
   geral: 93,
   atributos: {
-    ritmo: 85,
-    finalizacao: 92,
-    passe: 91,
-    drible: 95,
-    defesa: 38,
-    físico: 65
+    Pace: 85,
+    Shooting: 92,
+    Passing: 91,
+    Dribbling: 95,
+    Defense: 38,
+    Physical: 65
   }
 }
 
@@ -15,116 +15,116 @@ var carta2 = {
   nome: 'Cristiano Ronaldo',
   geral: 92,
   atributos: {
-    ritmo: 89,
-    finalizacao: 93,
-    passe: 81,
-    drible: 89,
-    defesa: 35,
-    físico: 77
+    Pace: 89,
+    Shooting: 93,
+    Passing: 81,
+    Dribbling: 89,
+    Defense: 35,
+    Physical: 77
   }
 }
 
 var carta3 = {
-  nome: 'Neymar Jr.',
+  nome: 'Neymar Jr',
   geral: 91,
   atributos: {
-    ritmo: 91,
-    finalizacao: 85,
-    passe: 86,
-    drible: 94,
-    defesa: 36,
-    físico: 59
+    Pace: 91,
+    Shooting: 85,
+    Passing: 86,
+    Dribbling: 94,
+    Defense: 36,
+    Physical: 59
   }
 }
 
 var carta4 = {
-  nome: 'Kylian Mbappé',
+  nome: 'Mbappé',
   geral: 90,
   atributos: {
-    ritmo: 96,
-    finalizacao: 86,
-    passe: 78,
-    drible: 91,
-    defesa: 39,
-    físico: 76
+    Pace: 96,
+    Shooting: 86,
+    Passing: 78,
+    Dribbling: 91,
+    Defense: 39,
+    Physical: 76
   }
 }
 
 var carta5 = {
-  nome: 'Robert Lewandowski',
+  nome: 'Lewandowski',
   geral: 91,
   atributos: {
-    ritmo: 78,
-    finalizacao: 91,
-    passe: 78,
-    drible: 86,
-    defesa: 43,
-    físico: 82
+    Pace: 78,
+    Shooting: 91,
+    Passing: 78,
+    Dribbling: 86,
+    Defense: 43,
+    Physical: 82
   }
 }
 
 var carta6 = {
-  nome: 'Kevin de Bruyne',
+  nome: 'De Bruyne',
   geral: 91,
   atributos: {
-    ritmo: 76,
-    finalizacao: 86,
-    passe: 93,
-    drible: 88,
-    defesa: 64,
-    físico: 78
+    Pace: 76,
+    Shooting: 86,
+    Passing: 93,
+    Dribbling: 88,
+    Defense: 64,
+    Physical: 78
   }
 }
 
 var carta7 = {
-  nome: 'Mohamed Salah',
+  nome: 'Salah',
   geral: 90,
   atributos: {
-    ritmo: 93,
-    finalizacao: 86,
-    passe: 81,
-    drible: 90,
-    defesa: 45,
-    físico: 75
+    Pace: 93,
+    Shooting: 86,
+    Passing: 81,
+    Dribbling: 90,
+    Defense: 45,
+    Physical: 75
   }
 }
 
 var carta8 = {
-  nome: 'Sadio Mané',
+  nome: 'Mané',
   geral: 90,
   atributos: {
-    ritmo: 94,
-    finalizacao: 85,
-    passe: 80,
-    drible: 90,
-    defesa: 44,
-    físico: 76
+    Pace: 94,
+    Shooting: 85,
+    Passing: 80,
+    Dribbling: 90,
+    Defense: 44,
+    Physical: 76
   }
 }
 
 var carta9 = {
-  nome: 'Harry Kane',
+  nome: 'Kane',
   geral: 88,
   atributos: {
-    ritmo: 68,
-    finalizacao: 91,
-    passe: 80,
-    drible: 81,
-    defesa: 47,
-    físico: 83
+    Pace: 68,
+    Shooting: 91,
+    Passing: 80,
+    Dribbling: 81,
+    Defense: 47,
+    Physical: 83
   }
 }
 
 var carta10 = {
-  nome: 'Toni Kroos',
+  nome: 'Kroos',
   geral: 88,
   atributos: {
-    ritmo: 54,
-    finalizacao: 81,
-    passe: 91,
-    drible: 81,
-    defesa: 71,
-    físico: 69
+    Pace: 54,
+    Shooting: 81,
+    Passing: 91,
+    Dribbling: 81,
+    Defense: 71,
+    Physical: 69
   }
 }
 
@@ -155,15 +155,33 @@ function sortearCarta() {
 
   cartaJogador = cartas[numeroCartaJogador]
 
-  // com o comando abaixo, remove-se o carta sorteada para o Jogador
+  // com o comando abaixo, remove-se a carta sorteada para o Jogador
   cartas.splice(numeroCartaJogador, 1)
   // dessa forma, ao sortear a carta da Máquina, não terá a carta do Jogador como opção
 
   var numeroCartaMaquina = parseInt(Math.random() * cartas.length)
   cartaMaquina = cartas[numeroCartaMaquina]
 
-  console.log(cartaJogador)
-  console.log(cartaMaquina)
+  document.getElementById('btnSortear').disabled = true
+  document.getElementById('btnJogar').disabled = false
+
+  exibirOpcoes()
+  exibirCartaJogador()
 }
 
-sortearCarta(cartas)
+function exibirOpcoes() {
+  var opcoes = document.getElementById('opcoes')
+  var opcoesTexto = ' '
+
+  for (var atributo in cartaJogador.atributos) {
+    opcoesTexto +=
+      "<input type='radio' name='atributo' value='" + atributo + "'>" + atributo
+  }
+  opcoes.innerHTML = opcoesTexto
+}
+
+function exibirCartaJogador() {
+  var imagemCartaJogador = document.getElementById('imagem-carta-jogador')
+  imagemCartaJogador.innerHTML =
+    "<img src='/media/players-image/" + cartaJogador.nome + ".png' alt='' />"
+}

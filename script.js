@@ -218,3 +218,9 @@ function exibirCartaJogador() {
   imagemCartaJogador.innerHTML =
     "<img src='/media/players-image/" + cartaJogador.nome + ".png' alt='' />"
 }
+
+function exibirCartaMaquina() {
+  var imagemCartaMaquina = document.getElementById('imagem-carta-maquina')
+  imagemCartaMaquina.innerHTML =
+    "<img src='/media/players-image/" + cartaMaquina.nome + ".png' alt='' />"
+}

@@ -55,6 +55,34 @@ h2 {
   margin-top: 10px;
 }
 
+#resultado {
+  display: flex;
+  background: #0c0358;
+  width: 320px;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+#pontosJogador {
+  margin-left: 20px;
+  color: #ffffff;
+}
+#pontosMaquina {
+  margin-right: 20px;
+  color: #ffffff;
+}
+
+#pMaquina,
+#pJogador,
+#divisor {
+  color: #ffffff;
+  font-size: 30px;
+}
+
 .imagens {
   display: flex;
   justify-content: space-around;
@@ -64,10 +92,10 @@ img {
   width: 340px;
 }
 
-#resultado {
+/* #resultado {
   margin: 0 auto;
   color: white;
   font-size: 30px;
-  /* background-color: #0c0358;
-  padding: 5px 10px; */
-}
+  background-color: #0c0358;
+  padding: 5px 10px; 
+} */

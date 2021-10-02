@@ -14,23 +14,30 @@
 
       <button onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
 
-      <form id="form">
-        <h2>Escolha o seu atributo</h2>
-        <div class="opcoes" id="opcoes"></div>
-        <div id="nada-selecionado"></div>
-        <button type="button" id="btnJogar" onclick="jogar()" disabled="true">
-          Jogar
-        </button>
-        <div class="imagens">
-          <div id="imagem-carta-jogador">
-            <img src="/media/players-image/example.png" alt="" />
-          </div>
-          <div id="imagem-carta-maquina">
-            <img src="/media/players-image/example.png" alt="" />
-          </div>
+      <h2>Escolha o seu atributo</h2>
+      <div class="opcoes" id="opcoes"></div>
+      <div id="nada-selecionado"></div>
+
+      <div id="resultado">
+        <div id="pontosJogador">JOGADOR&nbsp;&nbsp;</div>
+        <div id="pJogador"></div>
+        <div id="divisor">:</div>
+        <div id="pMaquina"></div>
+        <div id="pontosMaquina">COMPUTADOR</div>
+      </div>
+
+      <div class="imagens">
+        <div id="imagem-carta-jogador">
+          <img src="/media/players-image/example.png" alt="" />
         </div>
-        <div id="resultado"></div>
-      </form>
+        <div id="imagem-carta-maquina">
+          <img src="/media/players-image/example.png" alt="" />
+        </div>
+      </div>
+
+      <button type="button" id="btnJogar" onclick="jogar()" disabled="true">
+        Jogar
+      </button>
     </div>
 
     <script src="script.js"></script>

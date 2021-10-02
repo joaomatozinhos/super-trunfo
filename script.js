@@ -192,6 +192,10 @@ function obtemAtributoSelecionado() {
 
 function jogar() {
   var atributoSelecionado = obtemAtributoSelecionado()
+
+  var divPontosJogador = document.getElementById('pJogador')
+  var divPontosMaquina = document.getElementById('pMaquina')
+
   if (atributoSelecionado == undefined) {
     document.getElementById('nada-selecionado').innerHTML =
       'Selecione um atributo para jogar'
@@ -203,12 +207,20 @@ function jogar() {
     exibirCartaMaquina()
     document.getElementById('btnJogar').disabled = 'true'
 
+    var pontosJogador = 0
+    var pontosMaquina = 0
+
     if (valorCartaJogador > valorCartaMaquina) {
-      elementoResultado.innerHTML = 'Parabéns! Você venceu!'
+      pontosJogador++
+      divPontosJogador.innerHTML = pontosJogador
     } else if (valorCartaMaquina > valorCartaJogador) {
-      elementoResultado.innerHTML = 'Você foi derrotado'
+      pontosMaquina++
+      divPontosMaquina.innerHTML = pontosMaquina
     } else {
-      elementoResultado.innerHTML = 'Empatou'
+      pontosJogador++
+      pontosMaquina++
+      divPontosJogador.innerHTML = pontosJogador
+      divPontosMaquina.innerHTML = pontosMaquina
     }
   }
 }

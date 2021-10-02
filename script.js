@@ -180,6 +180,16 @@ function exibirOpcoes() {
   opcoes.innerHTML = opcoesTexto
 }
 
+function obtemAtributoSelecionado() {
+  var radioAtributos = document.getElementsByName('atributo')
+
+  for (var i = 0; i < radioAtributos.length; i++) {
+    if (radioAtributos[i].checked == true) {
+      return radioAtributos[i].value
+    }
+  }
+}
+
 function exibirCartaJogador() {
   var imagemCartaJogador = document.getElementById('imagem-carta-jogador')
   imagemCartaJogador.innerHTML =

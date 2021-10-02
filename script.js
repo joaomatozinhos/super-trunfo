@@ -190,6 +190,29 @@ function obtemAtributoSelecionado() {
   }
 }
 
+function jogar() {
+  var atributoSelecionado = obtemAtributoSelecionado()
+  if (atributoSelecionado == undefined) {
+    document.getElementById('nada-selecionado').innerHTML =
+      'Selecione um atributo para jogar'
+  } else {
+    var elementoResultado = document.getElementById('resultado')
+    var valorCartaJogador = cartaJogador.atributos[atributoSelecionado]
+    var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado]
+
+    exibirCartaMaquina()
+    document.getElementById('btnJogar').disabled = 'true'
+
+    if (valorCartaJogador > valorCartaMaquina) {
+      elementoResultado.innerHTML = 'Parabéns! Você venceu!'
+    } else if (valorCartaMaquina > valorCartaJogador) {
+      elementoResultado.innerHTML = 'Você foi derrotado'
+    } else {
+      elementoResultado.innerHTML = 'Empatou'
+    }
+  }
+}
+
 function exibirCartaJogador() {
   var imagemCartaJogador = document.getElementById('imagem-carta-jogador')
   imagemCartaJogador.innerHTML =

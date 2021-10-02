@@ -7,8 +7,8 @@
 body {
   font-family: 'Roboto Mono', monospace;
   min-height: 854px;
-  background-image: url('');
-  background-color: #1706b4;
+  background-image: url('/media/background-image.jpg');
+  background-color: #0c0358;
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -18,6 +18,10 @@ body {
 .container {
   text-align: center;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .page-title {
@@ -37,41 +41,33 @@ h2 {
   color: white;
 }
 
-#carta-jogador {
-  width: 360px;
-  height: 500px;
-  overflow: auto;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  margin: 0 auto;
-  display: flex;
-  align-items: flex-end;
-}
-
-#carta-jogador h3 {
-  text-align: center;
-}
-
-.carta-imagem {
-  border: 1px solid black;
-  height: 100px;
-  margin: 10px;
-}
-
-.carta-imagem img {
-  width: 100%;
-  height: 100%;
-}
-
-.carta-status {
-  height: 160px;
-  margin: 1.5rem;
-}
-
-.carta-status input {
-  margin: 20px 10px;
-}
-
 .opcoes {
   color: white;
+  margin-top: 10px;
+}
+
+.opcoes input {
+  margin-left: 25px;
+}
+
+#nada-selecionado {
+  color: white;
+  margin-top: 10px;
+}
+
+.imagens {
+  display: flex;
+  justify-content: space-around;
+}
+
+img {
+  width: 340px;
+}
+
+#resultado {
+  margin: 0 auto;
+  color: white;
+  font-size: 30px;
+  /* background-color: #0c0358;
+  padding: 5px 10px; */
 }

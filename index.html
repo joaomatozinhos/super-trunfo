@@ -17,9 +17,18 @@
       <form id="form">
         <h2>Escolha o seu atributo</h2>
         <div class="opcoes" id="opcoes"></div>
-        <button type="button" id="btnJogar" onclick="jogar()" disabled="false">
+        <div id="nada-selecionado"></div>
+        <button type="button" id="btnJogar" onclick="jogar()" disabled="true">
           Jogar
         </button>
+        <div class="imagens">
+          <div id="imagem-carta-jogador">
+            <img src="/media/players-image/example.png" alt="" />
+          </div>
+          <div id="imagem-carta-maquina">
+            <img src="/media/players-image/example.png" alt="" />
+          </div>
+        </div>
         <div id="resultado"></div>
       </form>
     </div>

@@ -217,17 +217,17 @@ function jogar() {
     if (valorCartaJogador > valorCartaMaquina) {
       pontosJogador++
       divPontosJogador.innerHTML = pontosJogador
-      mensagemResultado.innerHTML = 'PARABÉNS! VOCÊ GANHOU'
+      mensagemResultado.innerHTML = 'CONGRATULATIONS! YOU WON'
     } else if (valorCartaMaquina > valorCartaJogador) {
       pontosMaquina++
       divPontosMaquina.innerHTML = pontosMaquina
-      mensagemResultado.innerHTML = 'QUE PENA! VOCÊ PERDEU'
+      mensagemResultado.innerHTML = 'WHAT A PITY! YOU LOST'
     } else {
       pontosJogador++
       pontosMaquina++
       divPontosJogador.innerHTML = pontosJogador
       divPontosMaquina.innerHTML = pontosMaquina
-      mensagemResultado.innerHTML = 'EMPATE!'
+      mensagemResultado.innerHTML = 'DRAW!'
     }
     mensagemResultado.style.opacity = '1'
   }

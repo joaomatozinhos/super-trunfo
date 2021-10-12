@@ -195,12 +195,12 @@ function jogar() {
 
   var divPontosJogador = document.getElementById('pJogador')
   var divPontosMaquina = document.getElementById('pMaquina')
+  var mensagemResultado = document.getElementById('mensagemResultado')
 
   if (atributoSelecionado == undefined) {
     document.getElementById('nada-selecionado').innerHTML =
       'Selecione um atributo para jogar'
   } else {
-    var elementoResultado = document.getElementById('resultado')
     var valorCartaJogador = cartaJogador.atributos[atributoSelecionado]
     var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado]
 
@@ -213,14 +213,17 @@ function jogar() {
     if (valorCartaJogador > valorCartaMaquina) {
       pontosJogador++
       divPontosJogador.innerHTML = pontosJogador
+      mensagemResultado.innerHTML = 'PARABÉNS! VOCÊ GANHOU'
     } else if (valorCartaMaquina > valorCartaJogador) {
       pontosMaquina++
       divPontosMaquina.innerHTML = pontosMaquina
+      mensagemResultado.innerHTML = 'QUE PENA! VOCÊ PERDEU'
     } else {
       pontosJogador++
       pontosMaquina++
       divPontosJogador.innerHTML = pontosJogador
       divPontosMaquina.innerHTML = pontosMaquina
+      mensagemResultado.innerHTML = 'EMPATE!'
     }
   }
 }

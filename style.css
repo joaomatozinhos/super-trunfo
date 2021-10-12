@@ -22,6 +22,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
 
 .page-title {
@@ -47,12 +48,17 @@ h2 {
 }
 
 .opcoes input {
-  margin-left: 25px;
+  margin-left: 30px;
+  margin-right: 5px;
 }
 
 #nada-selecionado {
   color: white;
-  margin-top: 10px;
+  margin: 10px 0;
+  padding: 2px 5px;
+  font-weight: bold;
+  background-color: white;
+  color: darkblue;
 }
 
 #resultado {
@@ -64,7 +70,7 @@ h2 {
   height: 40px;
   border-radius: 20px;
   padding: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 #pontosJogador {
@@ -99,3 +105,8 @@ img {
   background-color: #0c0358;
   padding: 5px 10px; 
 } */
+
+#btnJogar {
+  position: absolute;
+  bottom: 0px;
+}

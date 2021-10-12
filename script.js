@@ -170,6 +170,9 @@ function sortearCarta() {
 }
 
 function exibirOpcoes() {
+  var exibirH2 = document.querySelector('h2')
+  exibirH2.style.opacity = '1'
+
   var opcoes = document.getElementById('opcoes')
   var opcoesTexto = ' '
 
@@ -178,6 +181,7 @@ function exibirOpcoes() {
       "<input type='radio' name='atributo' value='" + atributo + "'>" + atributo
   }
   opcoes.innerHTML = opcoesTexto
+  opcoes.style.opacity = '1'
 }
 
 function obtemAtributoSelecionado() {
@@ -198,8 +202,8 @@ function jogar() {
   var mensagemResultado = document.getElementById('mensagemResultado')
 
   if (atributoSelecionado == undefined) {
-    document.getElementById('nada-selecionado').innerHTML =
-      'Selecione um atributo para jogar'
+    document.getElementById('nadaSelecionado')
+    nadaSelecionado.style.opacity = '1'
   } else {
     var valorCartaJogador = cartaJogador.atributos[atributoSelecionado]
     var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado]
@@ -225,6 +229,7 @@ function jogar() {
       divPontosMaquina.innerHTML = pontosMaquina
       mensagemResultado.innerHTML = 'EMPATE!'
     }
+    mensagemResultado.style.opacity = '1'
   }
 }
 

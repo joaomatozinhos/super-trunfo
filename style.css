@@ -40,27 +40,28 @@ button {
 
 h2 {
   color: white;
-  /* opacity: 0; */
+  opacity: 0;
 }
 
-.opcoes {
+#opcoes {
   color: white;
   margin-top: 10px;
-  /* opacity: 0; */
+  opacity: 0;
 }
 
-.opcoes input {
+#opcoes input {
   margin-left: 30px;
   margin-right: 5px;
 }
 
-#nada-selecionado {
+#nadaSelecionado {
   color: white;
   margin: 10px 0;
+  padding: 2px 5px;
   font-weight: bold;
   background-color: white;
   color: darkblue;
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 #resultado {
@@ -115,7 +116,7 @@ img {
   font-weight: bold;
   margin-bottom: 10px;
   padding: 2px 5px;
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 #btnJogar {

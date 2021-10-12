@@ -145,6 +145,13 @@ var cartaMaquina
 var cartaJogador
 
 function sortearCarta() {
+  document.getElementById('imagem-carta-jogador').innerHTML =
+    "<img src='media/players-image/example.png' alt='' />"
+  document.getElementById('imagem-carta-maquina').innerHTML =
+    "<img src='media/players-image/example.png' alt='' />"
+  document.getElementById('nadaSelecionado').style.opacity = '0'
+  document.getElementById('mensagemResultado').style.opacity = '0'
+
   var numeroCartaJogador = parseInt(Math.random() * cartas.length)
 
   // o parseInt é para deixar o número inteiro, já que Math.random() sorteia números decimais
@@ -194,6 +201,9 @@ function obtemAtributoSelecionado() {
   }
 }
 
+var pontosJogador = 0
+var pontosMaquina = 0
+
 function jogar() {
   var atributoSelecionado = obtemAtributoSelecionado()
 
@@ -202,17 +212,14 @@ function jogar() {
   var mensagemResultado = document.getElementById('mensagemResultado')
 
   if (atributoSelecionado == undefined) {
-    document.getElementById('nadaSelecionado')
-    nadaSelecionado.style.opacity = '1'
+    document.getElementById('nadaSelecionado').style.opacity = '1'
   } else {
+    document.querySelectorAll('input').disabled = true
+
     var valorCartaJogador = cartaJogador.atributos[atributoSelecionado]
     var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado]
 
     exibirCartaMaquina()
-    document.getElementById('btnJogar').disabled = 'true'
-
-    var pontosJogador = 0
-    var pontosMaquina = 0
 
     if (valorCartaJogador > valorCartaMaquina) {
       pontosJogador++
@@ -230,7 +237,20 @@ function jogar() {
       mensagemResultado.innerHTML = 'DRAW!'
     }
     mensagemResultado.style.opacity = '1'
+
+    var opcoes = document.getElementById('opcoes')
+    var opcoesTexto = ' '
+
+    for (var atributo in cartaJogador.atributos) {
+      opcoesTexto +=
+        "<input type='radio' name='atributo' value='" +
+        atributo +
+        "' disabled='true'>" +
+        atributo
+    }
+    opcoes.innerHTML = opcoesTexto
   }
+  document.getElementById('btnSortear').disabled = false
 }
 
 function exibirCartaJogador() {

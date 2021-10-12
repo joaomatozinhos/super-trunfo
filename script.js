@@ -177,8 +177,7 @@ function sortearCarta() {
 }
 
 function exibirOpcoes() {
-  var exibirH2 = document.querySelector('h2')
-  exibirH2.style.opacity = '1'
+  document.querySelector('h2').style.opacity = '1'
 
   var opcoes = document.getElementById('opcoes')
   var opcoesTexto = ' '
@@ -214,6 +213,8 @@ function jogar() {
   if (atributoSelecionado == undefined) {
     document.getElementById('nadaSelecionado').style.opacity = '1'
   } else {
+    document.getElementById('nadaSelecionado').style.opacity = '0'
+
     document.querySelectorAll('input').disabled = true
 
     var valorCartaJogador = cartaJogador.atributos[atributoSelecionado]
@@ -263,4 +264,21 @@ function exibirCartaMaquina() {
   var imagemCartaMaquina = document.getElementById('imagem-carta-maquina')
   imagemCartaMaquina.innerHTML =
     "<img src='/media/players-image/" + cartaMaquina.nome + ".png' alt='' />"
+}
+
+function zerar() {
+  document.getElementById('imagem-carta-jogador').innerHTML =
+    "<img src='media/players-image/example.png' alt='' />"
+  document.getElementById('imagem-carta-maquina').innerHTML =
+    "<img src='media/players-image/example.png' alt='' />"
+  document.getElementById('nadaSelecionado').style.opacity = '0'
+  document.getElementById('mensagemResultado').style.opacity = '0'
+  document.getElementById('opcoes').style.opacity = '0'
+  document.querySelector('h2').style.opacity = '0'
+
+  pontosJogador = 0
+  pontosMaquina = 0
+
+  document.getElementById('pJogador').innerHTML = pontosJogador
+  document.getElementById('pMaquina').innerHTML = pontosMaquina
 }

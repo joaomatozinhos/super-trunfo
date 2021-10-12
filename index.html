@@ -33,9 +33,9 @@
           <p id="mensagemResultado">'CONGRATULATIONS! YOU WON'</p>
           <div id="resultado">
             <div id="pontosJogador">PLAYER&nbsp;&nbsp;</div>
-            <div id="pJogador"></div>
+            <div id="pJogador">0</div>
             <div id="divisor">:</div>
-            <div id="pMaquina"></div>
+            <div id="pMaquina">0</div>
             <div id="pontosMaquina">COMPUTER</div>
           </div>
         </div>
@@ -44,14 +44,8 @@
           <img src="media/players-image/example.png" alt="" />
         </div>
       </div>
-      <button
-        type="button"
-        id="btnMaisRodada"
-        onclick="maisRodada()"
-        disabled="true"
-      >
-        Jogar mais uma rodada
-      </button>
+
+      <button type="button" id="btnZerar" onclick="zerar()">RESET</button>
     </div>
 
     <script src="script.js"></script>

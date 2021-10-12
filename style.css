@@ -123,6 +123,8 @@ img {
   margin-bottom: 0px;
 }
 
-#btnMaisRodada {
-  background-color: khaki;
+#btnZerar {
+  position: absolute;
+  bottom: 30px;
+  right: 755px;
 }

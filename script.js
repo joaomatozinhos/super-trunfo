@@ -153,7 +153,6 @@ function sortearCarta() {
   document.getElementById('mensagemResultado').style.opacity = '0'
 
   var numeroCartaJogador = parseInt(Math.random() * cartas.length)
-
   // o parseInt é para deixar o número inteiro, já que Math.random() sorteia números decimais
 
   // por que "Math.random() * cartas.length"?
@@ -192,7 +191,7 @@ function exibirOpcoes() {
 
 function obtemAtributoSelecionado() {
   var radioAtributos = document.getElementsByName('atributo')
-
+  // console.log(radioAtributos)
   for (var i = 0; i < radioAtributos.length; i++) {
     if (radioAtributos[i].checked == true) {
       return radioAtributos[i].value
@@ -206,16 +205,14 @@ var pontosMaquina = 0
 function jogar() {
   var atributoSelecionado = obtemAtributoSelecionado()
 
+  var mensagemResultado = document.getElementById('mensagemResultado')
   var divPontosJogador = document.getElementById('pJogador')
   var divPontosMaquina = document.getElementById('pMaquina')
-  var mensagemResultado = document.getElementById('mensagemResultado')
 
   if (atributoSelecionado == undefined) {
     document.getElementById('nadaSelecionado').style.opacity = '1'
   } else {
     document.getElementById('nadaSelecionado').style.opacity = '0'
-
-    document.querySelectorAll('input').disabled = true
 
     var valorCartaJogador = cartaJogador.atributos[atributoSelecionado]
     var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado]
@@ -239,7 +236,6 @@ function jogar() {
     }
     mensagemResultado.style.opacity = '1'
 
-    var opcoes = document.getElementById('opcoes')
     var opcoesTexto = ' '
 
     for (var atributo in cartaJogador.atributos) {
@@ -249,21 +245,22 @@ function jogar() {
         "' disabled='true'>" +
         atributo
     }
-    opcoes.innerHTML = opcoesTexto
+    document.getElementById('opcoes').innerHTML = opcoesTexto
   }
   document.getElementById('btnSortear').disabled = false
+  document.getElementById('btnJogar').disabled = true
 }
 
 function exibirCartaJogador() {
   var imagemCartaJogador = document.getElementById('imagem-carta-jogador')
   imagemCartaJogador.innerHTML =
-    "<img src='/media/players-image/" + cartaJogador.nome + ".png' alt='' />"
+    "<img src='media/players-image/" + cartaJogador.nome + ".png' alt='' />"
 }
 
 function exibirCartaMaquina() {
   var imagemCartaMaquina = document.getElementById('imagem-carta-maquina')
   imagemCartaMaquina.innerHTML =
-    "<img src='/media/players-image/" + cartaMaquina.nome + ".png' alt='' />"
+    "<img src='media/players-image/" + cartaMaquina.nome + ".png' alt='' />"
 }
 
 function zerar() {

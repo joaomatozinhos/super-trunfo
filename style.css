@@ -126,5 +126,16 @@ img {
 #btnZerar {
   position: absolute;
   bottom: 30px;
-  right: 755px;
+  right: 750px;
+}
+
+button {
+  background-color: #3a28db;
+  color: white;
+  border: 2px solid #ffefa1;
+}
+
+button:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
 }

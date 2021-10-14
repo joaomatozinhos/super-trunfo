@@ -145,9 +145,9 @@ var cartaMaquina
 var cartaJogador
 
 function sortearCarta() {
-  document.getElementById('imagem-carta-jogador').innerHTML =
+  document.getElementById('imagemCartaJogador').innerHTML =
     "<img src='media/players-image/example.png' alt='' />"
-  document.getElementById('imagem-carta-maquina').innerHTML =
+  document.getElementById('imagemCartaMaquina').innerHTML =
     "<img src='media/players-image/example.png' alt='' />"
   document.getElementById('nadaSelecionado').style.opacity = '0'
   document.getElementById('mensagemResultado').style.opacity = '0'
@@ -252,21 +252,21 @@ function jogar() {
 }
 
 function exibirCartaJogador() {
-  var imagemCartaJogador = document.getElementById('imagem-carta-jogador')
+  var imagemCartaJogador = document.getElementById('imagemCartaJogador')
   imagemCartaJogador.innerHTML =
     "<img src='media/players-image/" + cartaJogador.nome + ".png' alt='' />"
 }
 
 function exibirCartaMaquina() {
-  var imagemCartaMaquina = document.getElementById('imagem-carta-maquina')
+  var imagemCartaMaquina = document.getElementById('imagemCartaMaquina')
   imagemCartaMaquina.innerHTML =
     "<img src='media/players-image/" + cartaMaquina.nome + ".png' alt='' />"
 }
 
 function zerar() {
-  document.getElementById('imagem-carta-jogador').innerHTML =
+  document.getElementById('imagemCartaJogador').innerHTML =
     "<img src='media/players-image/example.png' alt='' />"
-  document.getElementById('imagem-carta-maquina').innerHTML =
+  document.getElementById('imagemCartaMaquina').innerHTML =
     "<img src='media/players-image/example.png' alt='' />"
   document.getElementById('nadaSelecionado').style.opacity = '0'
   document.getElementById('mensagemResultado').style.opacity = '0'

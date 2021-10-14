@@ -212,6 +212,7 @@ function jogar() {
   if (atributoSelecionado == undefined) {
     document.getElementById('nadaSelecionado').style.opacity = '1'
   } else {
+    document.getElementById('btnJogar').disabled = true
     document.getElementById('nadaSelecionado').style.opacity = '0'
 
     var valorCartaJogador = cartaJogador.atributos[atributoSelecionado]
@@ -248,7 +249,6 @@ function jogar() {
     document.getElementById('opcoes').innerHTML = opcoesTexto
   }
   document.getElementById('btnSortear').disabled = false
-  document.getElementById('btnJogar').disabled = true
 }
 
 function exibirCartaJogador() {

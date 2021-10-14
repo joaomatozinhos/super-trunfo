@@ -9,3 +9,4 @@ No caso deste projeto, a disputa é entre o usuário e o computador, sendo as ca
 - JavaScript
 
 ### Veja o resultado e se divirta
+https://joaomatozinhos.github.io/super-trunfo/
